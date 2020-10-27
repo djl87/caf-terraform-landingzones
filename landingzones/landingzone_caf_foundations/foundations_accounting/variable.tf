@@ -11,11 +11,11 @@ variable resource_groups_hub {
 # resource_groups = {
 #     apim          = { 
 #                     name     = "-apim-demo"
-#                     location = "southeastasia" 
+#                     location = "westeurope" 
 #     },
 #     networking    = {    
 #                     name     = "-networking-demo"
-#                     location = "eastasia" 
+#                     location = "northeurope" 
 #     },
 #     insights      = { 
 #                     name     = "-insights-demo"
@@ -33,7 +33,7 @@ variable location {
 }
 
 # Example:
-# location = "southeastasia"
+# location = "westeurope"
 
 variable tags_hub {
   description = "map of the tags to be applied"

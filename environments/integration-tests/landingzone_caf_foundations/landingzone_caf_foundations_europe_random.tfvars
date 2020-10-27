@@ -4,8 +4,8 @@
 global_settings = {
   #specifies the set of locations you are going to use in this landing zone
   location_map = {
-    southeastasia = "southeastasia"
-    eastasia      = "eastasia"
+    westeurope = "westeurope"
+    northeurope      = "northeurope"
   }
 
   #naming convention to be used as defined in naming convention module, accepted values are cafclassic, cafrandom, random, passthrough
@@ -22,24 +22,24 @@ global_settings = {
 
   # Set of resource groups to land the foundations
   resource_groups_hub = {
-    southeastasia = {
+    westeurope = {
       HUB-CORE-SEC = {
-        name     = "hub-core-sec-sea"
-        location = "southeastasia"
+        name     = "hub-core-sec-we"
+        location = "westeurope"
       }
       HUB-OPERATIONS = {
-        name     = "hub-operations-sea"
-        location = "southeastasia"
+        name     = "hub-operations-we"
+        location = "westeurope"
       }
     }
-    eastasia = {
+    northeurope = {
       HUB-CORE-SEC = {
         name     = "hub-core-sec-hk"
-        location = "southeastasia"
+        location = "northeurope"
       }
       HUB-OPERATIONS = {
         name     = "hub-operations-hk"
-        location = "southeastasia"
+        location = "northeurope"
       }
     }
   }
@@ -49,7 +49,7 @@ global_settings = {
 accounting_settings = {
 
   # Azure diagnostics logs retention period
-  southeastasia = {
+  westeurope = {
     # Azure Subscription activity logs retention period
     azure_activity_log_enabled    = false
     azure_activity_logs_name      = "actlogs"
@@ -106,7 +106,7 @@ accounting_settings = {
       }
     }
   }
-  eastasia = {
+  northeurope = {
     # Azure Subscription activity logs retention period
     azure_activity_log_enabled    = false
     azure_activity_logs_name      = "actlogs"
@@ -167,7 +167,7 @@ accounting_settings = {
 
 ## governance
 governance_settings = {
-  southeastasia = {
+  westeurope = {
     #current code supports only two levels of managemenr groups and one root
     deploy_mgmt_groups = false
     management_groups = {
@@ -201,13 +201,13 @@ governance_settings = {
       cant_create_ip_spoke   = false
       managed_disks_only     = true
       restrict_locations     = false
-      list_of_allowed_locs   = ["southeastasia", "eastasia"]
+      list_of_allowed_locs   = ["westeurope", "northeurope"]
       restrict_supported_svc = false
       list_of_supported_svc  = ["Microsoft.Network/publicIPAddresses", "Microsoft.Compute/disks"]
-      msi_location           = "southeastasia"
+      msi_location           = "westeurope"
     }
   }
-  eastasia = {}
+  northeurope = {}
 }
 
 ## security 

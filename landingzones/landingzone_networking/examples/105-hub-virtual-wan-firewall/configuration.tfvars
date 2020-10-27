@@ -1,7 +1,7 @@
 resource_groups = {
   vnet_sg = {
     name       = "vnet-hub-sg"
-    location   = "southeastasia"
+    location   = "westeurope"
     useprefix  = true
     max_length = 40
   }
@@ -10,7 +10,7 @@ resource_groups = {
 vnets = {
   hub_sg = {
     resource_group_key = "vnet_sg"
-    location           = "southeastasia"
+    location           = "westeurope"
     vnet = {
       name          = "hub"
       address_space = ["10.10.100.0/24"]
@@ -112,9 +112,9 @@ vnets = {
 }
 
 # firewalls = {
-#   # Southeastasia firewall (do not change the key when created)
-#   southeastasia = {
-#     location           = "southeastasia"
+#   # westeurope firewall (do not change the key when created)
+#   westeurope = {
+#     location           = "westeurope"
 #     resource_group_key = "vnet_sg"
 #     vnet_key           = "hub_sg"
 
@@ -158,8 +158,8 @@ vnets = {
 # }
 
 # bastions = {
-#   southeastasia = {
-#     location           = "southeastasia"
+#   westeurope = {
+#     location           = "westeurope"
 #     resource_group_key = "vnet_sg"
 #     vnet_key           = "hub_sg"
 #     subnet_key         = "AzureBastionSubnet"
@@ -197,14 +197,14 @@ vnets = {
 # }
 
 vwans = {
-  southeastasia = {
+  westeurope = {
     resource_group_key = "vnet_sg"
     name               = "ContosovWAN"
 
     hubs = {
       hub1 = {
-        hub_name                      = "SEA-HUB"
-        region                        = "southeastasia"
+        hub_name                      = "WE-HUB"
+        region                        = "westeurope"
         hub_address_prefix            = "10.0.3.0/24"
         deploy_firewall               = true
         peerings                      = {}
@@ -212,7 +212,7 @@ vwans = {
         firewall_resource_groupe_name = "azfwsg"
         deploy_p2s                    = false
         p2s_config = {
-          name       = "caf-sea-vpn-p2s"
+          name       = "caf-we-vpn-p2s"
           scale_unit = 2
           connection_configuration = {
             name = "client-connections"
@@ -251,12 +251,12 @@ vwans = {
         }
         deploy_s2s = false
         s2s_config = {
-          name       = "caf-sea-vpn-s2s"
+          name       = "caf-we-vpn-s2s"
           scale_unit = 1
         }
         deploy_er = false
         er_config = {
-          name        = "caf-sea-er"
+          name        = "caf-we-er"
           scale_units = 1
         }
 
@@ -264,7 +264,7 @@ vwans = {
 
       hub2 = {
         hub_name                      = "HK-HUB"
-        region                        = "eastasia"
+        region                        = "northeurope"
         hub_address_prefix            = "10.0.4.0/24"
         deploy_firewall               = true
         firewall_name                 = "azfhk"

@@ -39,7 +39,7 @@ vnets = {
 }
 
 firewalls = {
-  # Southeastasia firewall (do not change the key when created)
+  # westeurope firewall (do not change the key when created)
   westus2 = {
     location           = "westus2"
     resource_group_key = "vnet_us"

@@ -7,8 +7,8 @@ virtual_hub_config = {
 
     hubs = {
       hub1 = {
-        hub_name                      = "SEA-HUB"
-        region                        = "southeastasia"
+        hub_name                      = "WE-HUB"
+        region                        = "westeurope"
         hub_address_prefix            = "10.0.3.0/24"
         deploy_firewall               = true
         peerings                      = {}
@@ -16,7 +16,7 @@ virtual_hub_config = {
         firewall_resource_groupe_name = "azfwsg"
         deploy_p2s                    = false
         p2s_config = {
-          name       = "caf-sea-vpn-p2s"
+          name       = "caf-we-vpn-p2s"
           scale_unit = 2
           connection_configuration = {
             name = "client-connections"
@@ -55,12 +55,12 @@ virtual_hub_config = {
         }
         deploy_s2s = false
         s2s_config = {
-          name       = "caf-sea-vpn-s2s"
+          name       = "caf-we-vpn-s2s"
           scale_unit = 1
         }
         deploy_er = false
         er_config = {
-          name        = "caf-sea-er"
+          name        = "caf-we-er"
           scale_units = 1
         }
 
@@ -68,7 +68,7 @@ virtual_hub_config = {
 
       hub2 = {
         hub_name                      = "HK-HUB"
-        region                        = "eastasia"
+        region                        = "northeurope"
         hub_address_prefix            = "10.0.4.0/24"
         deploy_firewall               = true
         firewall_name                 = "azfhk"
@@ -98,7 +98,7 @@ spokes = {
   spoke1 = {
     rg = {
       name     = "virtualhub-spoke-test"
-      location = "eastasia"
+      location = "northeurope"
     }
     peering_name = "spoke1-hub-hk-link"
     network = {

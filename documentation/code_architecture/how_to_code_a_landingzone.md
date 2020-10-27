@@ -87,7 +87,7 @@ Here is my first try:
 ```hcl
 resource "azurerm_resource_group" "myresourcegroup" {
   name     = "caf-prototype-rg"
-  location = "Southeastasia"
+  location = "westeurope"
 
   tags = {
     environment = "Dev"

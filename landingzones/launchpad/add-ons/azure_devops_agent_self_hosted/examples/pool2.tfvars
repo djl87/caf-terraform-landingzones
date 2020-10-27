@@ -7,7 +7,7 @@ vm_object = {
 
     resource_group = {
         name     = "devop-agents"
-        location = "southeastasia" 
+        location = "westeurope" 
     }
 
 
@@ -67,7 +67,7 @@ acr_object = {
     
     resource_group = {    
         name     = "container-registry"
-        location = "southeastasia" 
+        location = "westeurope" 
     }
 
     name            = "level0"

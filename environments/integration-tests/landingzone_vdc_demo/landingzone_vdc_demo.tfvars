@@ -2,7 +2,7 @@
 resource_groups_shared_services = {
   HUB-CORE-NET = {
     name     = "-hub-network-shared"
-    location = "southeastasia"
+    location = "westeurope"
   }
 }
 
@@ -305,7 +305,7 @@ bastion_config = {
 resource_groups_shared_egress = {
   HUB-EGRESS-NET = {
     name     = "-hub-network-egress"
-    location = "southeastasia"
+    location = "westeurope"
   }
 }
 
@@ -401,7 +401,7 @@ udr_object = {
 resource_groups_shared_transit = {
   HUB-NET-TRANSIT = {
     name     = "-hub-network-transit"
-    location = "southeastasia"
+    location = "westeurope"
   }
 }
 

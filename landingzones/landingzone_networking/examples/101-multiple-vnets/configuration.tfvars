@@ -1,7 +1,7 @@
 resource_groups = {
   vnet_sg = {
     name       = "vnet-hub-sg"
-    location   = "southeastasia"
+    location   = "westeurope"
     useprefix  = true
     max_length = 40
   }
@@ -10,7 +10,7 @@ resource_groups = {
 vnets = {
   hub_sg = {
     resource_group_key = "vnet_sg"
-    location           = "southeastasia"
+    location           = "westeurope"
     vnet = {
       name          = "hub"
       address_space = ["10.10.100.0/24"]
@@ -121,7 +121,7 @@ vnets = {
 
   spoke_aks_sg = {
     resource_group_key = "vnet_sg"
-    location           = "southeastasia"
+    location           = "westeurope"
     vnet = {
       name          = "aks"
       address_space = ["10.10.101.0/24"]
