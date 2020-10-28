@@ -1,8 +1,16 @@
 # Map of the remote data state filled by the rover at runtime
-variable lowerlevel_storage_account_name {}
-variable lowerlevel_container_name {}
-variable lowerlevel_key {} # Keeping the key for the lower level0 access
-variable lowerlevel_resource_group_name {}
+variable lowerlevel_storage_account_name {
+  default = null
+}
+variable lowerlevel_container_name {
+  default = null
+}
+variable lowerlevel_key {
+  default = null
+} # Keeping the key for the lower level0 access
+variable lowerlevel_resource_group_name {
+  default = null
+}
 
 
 # Set of variables for the CAF foundations landing zone
