@@ -41,3 +41,4 @@ variable prefix {
 # added for TFC
 variable environment {}
 variable convention {}
+variable location {}
