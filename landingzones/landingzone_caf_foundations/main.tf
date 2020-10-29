@@ -13,16 +13,16 @@ terraform {
   }
 }
 
-data "terraform_remote_state" "launchpad" {
-  backend = "remote"
+# data "terraform_remote_state" "launchpad" {
+#   backend = "remote"
 
-  config = {
-    organization = "dlochhead"
-    workspaces = {
-      name = "caf-terraform-landingzones"
-    }
-  }
-}
+#   config = {
+#     organization = "dlochhead"
+#     workspaces = {
+#       name = "caf-terraform-landingzones"
+#     }
+#   }
+# }
 # terraform {
 #   backend "azurerm" {
 #   }
@@ -61,9 +61,9 @@ locals {
 # }
 
 locals {
-  global_settings     = data.terraform_remote_state.launchpad.outputs.global_settings
+  # global_settings     = data.terraform_remote_state.launchpad.outputs.global_settings
   prefix              = var.prefix == null ? local.global_settings.prefix : var.prefix
   environment         = local.global_settings.environment
   tags_hub            = merge({ "environment" = local.environment }, var.global_settings.tags_hub)
-  azure_subscriptions = data.terraform_remote_state.launchpad.outputs.azure_subscriptions
+  # azure_subscriptions = data.terraform_remote_state.launchpad.outputs.azure_subscriptions
 }
