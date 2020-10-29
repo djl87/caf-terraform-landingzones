@@ -2,12 +2,23 @@ provider "azurerm" {
   features {}
 }
 
-terraform {
-  backend "remote" {
-    hostname = "app.terraform.io"
-    organization = "dlochhead"
+# terraform {
+#   backend "remote" {
+#     hostname = "app.terraform.io"
+#     organization = "dlochhead"
 
-    workspaces {
+#     workspaces {
+#       name = "caf-terraform-landingzones"
+#     }
+#   }
+# }
+
+data "terraform_remote_state" "launchpad" {
+  backend = "remote"
+
+  config = {
+    organization = "dlochhead"
+    workspaces = {
       name = "caf-terraform-landingzones"
     }
   }
@@ -50,9 +61,9 @@ locals {
 # }
 
 locals {
-  global_settings     = var.lowerlevel_resource_group_name != null ? data.terraform_remote_state.launchpad.outputs.global_settings : null
+  global_settings     = data.terraform_remote_state.launchpad.outputs.global_settings
   prefix              = var.prefix == null ? local.global_settings.prefix : var.prefix
   environment         = local.global_settings.environment
   tags_hub            = merge({ "environment" = local.environment }, var.global_settings.tags_hub)
-  azure_subscriptions = var.lowerlevel_resource_group_name != null ? data.terraform_remote_state.launchpad.outputs.azure_subscriptions : null
+  azure_subscriptions = data.terraform_remote_state.launchpad.outputs.azure_subscriptions
 }
