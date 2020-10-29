@@ -5,7 +5,7 @@ global_settings = {
   #specifies the set of locations you are going to use in this landing zone
   location_map = {
     westeurope = "westeurope"
-    northeurope      = "northeurope"
+    northeurope = "northeurope"
   }
 
   #naming convention to be used as defined in naming convention module, accepted values are cafclassic, cafrandom, random, passthrough
@@ -207,7 +207,7 @@ governance_settings = {
       msi_location           = "westeurope"
     }
   }
-  norteurope = {}
+  northeurope = {}
 }
 
 ## security 

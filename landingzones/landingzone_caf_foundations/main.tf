@@ -2,16 +2,16 @@ provider "azurerm" {
   features {}
 }
 
-# terraform {
-#   backend "remote" {
-#     hostname = "app.terraform.io"
-#     organization = "dlochhead"
+terraform {
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "dlochhead"
 
-#     workspaces {
-#       name = "caf-terraform-landingzones"
-#     }
-#   }
-# }
+    workspaces {
+      name = "caf-terraform-landingzones"
+    }
+  }
+}
 
 data "terraform_remote_state" "launchpad" {
   backend = "remote"
