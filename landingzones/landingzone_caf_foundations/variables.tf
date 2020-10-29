@@ -37,3 +37,7 @@ variable prefix {
   description = "(Optional) By default CAF Foundation gets the prefix from the launchpad. You can overwride it by setting a value."
   default     = null
 }
+
+# added for TFC
+variable environment {}
+variable convention {}
